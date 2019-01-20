@@ -52,8 +52,8 @@ public class Action {
 	 */
 	public boolean isAllowed(Player player) {
 		boolean allow = false;
-		for (Item item : requiredItems){
-			if (player.canSeeItem(item)){
+		for (Item item : requiredItems) {
+			if (player.canSeeItem(item)) {
 				allow = true;
 			}
 		}

@@ -30,23 +30,23 @@ public class CommandParser {
 	 */
 	public static Effect parsePlayerCommand(String command) {
 		String[] parts = command.split(" ");
-		String firstPart = parts[0];
+		String part = parts[0];
 
-		if ("look".equalsIgnoreCase(firstPart) && parts.length == 1) {
+		if ("look".equalsIgnoreCase(part) && parts.length == 1) {
 			return new LookLocation();
-		} else if("look".equalsIgnoreCase(firstPart) && parts.length == 2) {
+		} else if("look".equalsIgnoreCase(part) && parts.length == 2) {
 			return new LookItem(parts[1]);
-		} else if("inventory".equalsIgnoreCase(firstPart)) {
+		} else if("inventory".equalsIgnoreCase(part)) {
 			return new ShowInventory();
-		} else if("go".equalsIgnoreCase(firstPart) && parts.length == 2) {
+		} else if("go".equalsIgnoreCase(part) && parts.length == 2) {
 			return new GoDirection(parts[1]);
-		} else if("take".equalsIgnoreCase(firstPart) && parts.length == 2) {
+		} else if("take".equalsIgnoreCase(part) && parts.length == 2) {
 			return new TakeItem(parts[1]);
-		} else if("drop".equalsIgnoreCase(firstPart) && parts.length == 2) {
+		} else if("drop".equalsIgnoreCase(part) && parts.length == 2) {
 			return new DropItem(parts[1]);
-		} else if("help".equalsIgnoreCase(firstPart)) {
+		} else if("help".equalsIgnoreCase(part)) {
 			return new Message(HELP_MESSAGE);
-		} else if("quit".equalsIgnoreCase(firstPart)) {
+		} else if("quit".equalsIgnoreCase(part)) {
 			return new Quit();
 		} else {
 			return new DoAction(command);

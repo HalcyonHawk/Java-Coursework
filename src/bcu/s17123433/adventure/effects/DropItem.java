@@ -28,10 +28,10 @@ public class DropItem implements Effect {
      */
     @Override
     public void execute(Player player, World world) {
-        if (world.getItem(name) == null && !player.getInventory().contains(world.getItem(name))){
-            player.dropItem(world.getItem(name));
+        if (world.getItem(name) == null && !player.getInventory().contains(world.getItem(name))) {
             System.out.println("You can not drop an item you don't have.");
         } else {
+            player.dropItem(world.getItem(name));
             System.out.println("You dropped: " + name);
         }
     }

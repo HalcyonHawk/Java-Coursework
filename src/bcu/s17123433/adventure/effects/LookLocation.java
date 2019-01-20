@@ -11,7 +11,7 @@ import bcu.s17123433.adventure.model.World;
  * what directions the player can walk.</p>
  * @author Tilly Davies
  */
-public class LookLocation implements Effect{
+public class LookLocation implements Effect {
 
     /**
      * Create object from no parameters

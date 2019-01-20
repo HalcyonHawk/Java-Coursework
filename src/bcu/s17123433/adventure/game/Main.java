@@ -27,34 +27,35 @@ public class Main implements Runnable {
      * Initialises private World to an object so it can be used in the run method.
      * @param world new game world
      */
-    public Main(World world){
+    public Main(World world) {
         this.world = world;
     }
 
     /**
      * Creates the player at the starting location which is decided in the main method.
      * Then, takes user input and parses this to the commandParser class.
+     * Ends game if the quitException is caught
      */
     @Override
     public void run() {
         Player player = new Player(world.getStartingLocation());
 
-        for (Effect effect: world.getStartEffects()){
-            effect.execute(player, world);
+        for (Effect startingEffect : world.getStartEffects()) {
+            startingEffect.execute(player, world);
         }
 
-        BufferedReader keyboard = new BufferedReader(
-                new InputStreamReader(System.in)
-        );
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         while(true) {
             try {
                 System.out.print("> ");
-                String command = keyboard.readLine();
+                String command = bufferedReader.readLine();
                 CommandParser.parsePlayerCommand(command).execute(player, world);
-            } catch(IOException | NullPointerException ex) {
+            } catch(IOException ex) {
+                System.out.println("Invalid command");
+            } catch(NullPointerException ex) {
                 System.out.println("Invalid command");
             } catch(QuitException ex) {
-                System.exit(0);
+                break;
             }
         }
     }
