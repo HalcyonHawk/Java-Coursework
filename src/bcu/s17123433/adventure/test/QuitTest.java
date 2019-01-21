@@ -9,8 +9,8 @@ import org.junit.Test;
 
 public class QuitTest {
     private final World world = new World();
-    private final Location garden = world.addLocation("garden", "You are in a garden with lots of plants.");
-    private final Player player = new Player(garden);
+    private final Location room = world.addLocation("room", "You are in an empty room.");
+    private final Player player = new Player(room);
 
     @Test(expected = QuitException.class)
     public void testAction() {

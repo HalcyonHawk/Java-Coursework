@@ -34,44 +34,39 @@ public class LocationTest {
 	}
 
 	@Test
-	public void testDoesntHaveItem() {
+	public void testDoesNotHaveItem() {
 		Item chair = new Item("chair", "It is an antique, yellow chair.");
 		assertFalse(house.hasItem(chair));
 	}
 
 	@Test
 	public void testAddItems() {
-		//Create items
-		Item clock = new Item("clock", "It is an old grandfather clock.");
-		Item hammer = new Item("hammer", "It is a brand new hammer.");
+		Item clock = new Item("clock", "It is a retro clock.");
+		Item lamp = new Item("lamp", "It is a modern styled lamp.");
 		ArrayList<Item> items = new ArrayList<>();
 		items.add(clock);
-		items.add(hammer);
+		items.add(lamp);
 
-		//Test adding items to location
 		house.addItem(clock);
-		house.addItem(hammer);
+		house.addItem(lamp);
 		assertEquals(items, house.getItems());
 
 	}
 
 	@Test
 	public void testRemoveItem() {
-		//Create items
-		Item clock = new Item("clock", "It is an old grandfather clock.");
-		Item hammer = new Item("hammer", "It is a brand new hammer.");
+		Item pillow = new Item("pillow", "It is a green, patterned pillow.");
+		Item mug = new Item("mug", "It is a new mug, full of tea.");
 		ArrayList<Item> items = new ArrayList<>();
-		items.add(clock);
-		items.add(hammer);
+		items.add(pillow);
+		items.add(mug);
 
-		//Add items to location
-		house.addItem(clock);
-		house.addItem(hammer);
+		house.addItem(pillow);
+		house.addItem(mug);
 		assertEquals(items, house.getItems());
 
-		//Remove an item
-		house.removeItem(hammer);
-		items.remove(hammer);
+		house.removeItem(mug);
+		items.remove(mug);
 		assertEquals(items, house.getItems());
 	}
 

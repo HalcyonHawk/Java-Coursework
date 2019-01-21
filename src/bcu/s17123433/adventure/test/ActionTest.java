@@ -32,7 +32,7 @@ public class ActionTest {
     }
 
     @Test
-    public void testAddGetEffect() {
+    public void testGetEffect() {
         Effect effect = new Effect() {
             @Override
             public void execute(Player player, World world) {
