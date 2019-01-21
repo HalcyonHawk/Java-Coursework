@@ -58,7 +58,7 @@ public class World {
 	 * Adds new item to the world if no item with given name already exists.
 	 * @param name Name of new item
 	 * @param description Description of new item
-	 * @return
+	 * @return Item name
 	 */
 	public Item addItem(String name, String description) {
 		if (mapOfItems.containsKey(name)){
@@ -81,7 +81,7 @@ public class World {
 	 * Adds new location to the world with given name and description.
 	 * @param name Name of new location
 	 * @param description Description of new location
-	 * @return
+	 * @return Location name
 	 */
 	public Location addLocation(String name, String description) {
 		if (mapOfLocations.containsKey(name)){
