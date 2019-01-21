@@ -31,4 +31,9 @@ public class ItemTest {
 		clock.setLocation(house);
 		assertSame(house, clock.getLocation());
 	}
+
+	@Test
+	public void testStartNotPortable() {
+		assertFalse(clock.isPortable());
+	}
 }

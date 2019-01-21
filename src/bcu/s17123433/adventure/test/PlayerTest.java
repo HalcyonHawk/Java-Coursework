@@ -38,6 +38,15 @@ public class PlayerTest {
 
 
 	@Test
+	public void testTakeItem() {
+		Item paper = new Item("paper", "A piece of A4 paper");
+		street.addItem(paper);
+		paper.setPortable(true);
+		player.takeItem(paper);
+		assertTrue(player.hasItem(paper));
+	}
+
+	@Test
 	public void testHasItemsInInventory() {
 		Item key = new Item("key", "A golden key.");
 		street.addItem(key);
@@ -50,15 +59,6 @@ public class PlayerTest {
 		player.takeItem(key);
 		player.takeItem(coins);
 		assertEquals(items, player.getInventory());
-	}
-
-	@Test
-	public void testTakeItem() {
-		Item paper = new Item("paper", "A piece of A4 paper");
-		street.addItem(paper);
-		paper.setPortable(true);
-		player.takeItem(paper);
-		assertTrue(player.hasItem(paper));
 	}
 
 	@Test(expected = IllegalArgumentException.class)

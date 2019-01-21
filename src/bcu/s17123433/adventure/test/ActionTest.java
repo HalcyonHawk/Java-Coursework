@@ -7,28 +7,28 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ActionTest {
-    private final Action action = new Action("drive");
+    private final Action drive = new Action("drive");
     private final Location car = new Location("car", "You are in a car.");
     private final Player player = new Player(car);
 
     @Test
     public void testGetName() {
-        assertEquals(action.getName(), "drive");
+        assertEquals(drive.getName(), "drive");
     }
 
     @Test
     public void testActionNotAllowed() {
         Item keys = new Item("keys", "A set of keys, one looks like it could be for a car.");
-        action.addRequiredItem(keys);
-        assertFalse(action.isAllowed(player));
+        drive.addRequiredItem(keys);
+        assertFalse(drive.isAllowed(player));
     }
 
     @Test
     public void testDoActionWithRequiredItem() {
         Item keys = new Item("keys", "A set of keys, one looks like it could be for a car.");
-        action.addRequiredItem(keys);
+        drive.addRequiredItem(keys);
         car.addItem(keys);
-        assertTrue(action.isAllowed(player));
+        assertTrue(drive.isAllowed(player));
     }
 
     @Test
@@ -39,8 +39,8 @@ public class ActionTest {
                 System.out.println("You start to drive the car, then crash.");
             }
         };
-        action.addEffect(effect);
-        assertTrue(action.getEffects().contains(effect));
+        drive.addEffect(effect);
+        assertTrue(drive.getEffects().contains(effect));
     }
 }
 
