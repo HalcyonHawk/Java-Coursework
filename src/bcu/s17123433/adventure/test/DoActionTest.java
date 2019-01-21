@@ -16,8 +16,8 @@ public class DoActionTest {
         car.addNeighbour("out", beach);
         Action drive = world.addAction("drive car");
         drive.addEffect(new GoDirection("out"));
-        assertEquals(player.getLocation().getName(), "car");
+        assertEquals("car", player.getLocation().getName());
         drive.getEffects().get(0).execute(player, world);
-        assertEquals(player.getLocation().getName(), "beach");
+        assertEquals("beach", player.getLocation().getName());
     }
 }

@@ -25,7 +25,7 @@ public class WorldTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testSameLocation() {
+    public void testSameLocationName() {
         world.addLocation("house", "A house");
         world.addLocation("house", "Another house");
     }
@@ -37,7 +37,7 @@ public class WorldTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testSameItem() {
+    public void testSameItemName() {
         world.addItem("box", "A cardboard box.");
         world.addItem("box", "A second cardboard box.");
 
@@ -50,7 +50,7 @@ public class WorldTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testDoubleAction() {
+    public void testSameAction() {
         world.addAction("run");
         world.addAction("run");
     }

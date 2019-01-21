@@ -51,7 +51,7 @@ public class LocationTest {
 		//Test adding items to location
 		house.addItem(clock);
 		house.addItem(hammer);
-		assertEquals(house.getItems(), items);
+		assertEquals(items, house.getItems());
 
 	}
 
@@ -67,12 +67,12 @@ public class LocationTest {
 		//Add items to location
 		house.addItem(clock);
 		house.addItem(hammer);
-		assertEquals(house.getItems(), items);
+		assertEquals(items, house.getItems());
 
 		//Remove an item
 		house.removeItem(hammer);
 		items.remove(hammer);
-		assertEquals(house.getItems(), items);
+		assertEquals(items, house.getItems());
 	}
 
 	@Test(expected = IllegalArgumentException.class)
@@ -85,7 +85,7 @@ public class LocationTest {
 	public void testNeighbour(){
 		Location neighbour = new Location("bedroom", "You are in a bedroom.");
 		house.addNeighbour("upstairs", neighbour);
-		assertEquals(house.getNeighbour("upstairs"), neighbour);
+		assertSame(neighbour, house.getNeighbour("upstairs"));
 	}
 
 	@Test
@@ -94,6 +94,6 @@ public class LocationTest {
 		house.addNeighbour("out", new Location("garden", "You are in a garden."));
 		house.addNeighbour("up", new Location("bedroom", "You are in a cosy bedroom."));
 		house.addNeighbour("down", new Location("basement", "You are in a cold, dark room."));
-		assertEquals(house.getAllDirections().toArray(), directions.toArray());
+		assertEquals(directions.toArray(), house.getAllDirections().toArray());
 	}
 }

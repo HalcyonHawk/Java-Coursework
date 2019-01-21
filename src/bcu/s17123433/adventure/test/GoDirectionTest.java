@@ -18,8 +18,8 @@ public class GoDirectionTest {
     public void testGoDirection() {
         forest.addNeighbour("north", house);
         GoDirection goDirection = new GoDirection("north");
-        assertEquals(player.getLocation().getName(), "forest");
+        assertEquals("forest", player.getLocation().getName());
         goDirection.execute(player, world);
-        assertEquals(player.getLocation().getName(), "house");
+        assertEquals("house", player.getLocation().getName());
     }
 }

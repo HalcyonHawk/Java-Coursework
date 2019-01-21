@@ -51,13 +51,13 @@ public class Action {
 	 * @return If the player can complete the action
 	 */
 	public boolean isAllowed(Player player) {
-		boolean allow = false;
+		boolean permission = false;
 		for (Item item : requiredItems) {
 			if (player.canSeeItem(item)) {
-				allow = true;
+				permission = true;
 			}
 		}
-		return allow;
+		return permission;
 	}
 
 	/**

@@ -21,8 +21,8 @@ public class TakeItem implements Effect {
         this.name = name;
     }
 
-    /**Puts the given item from the location into the player's inventory if the item is in the players location and can be picked up.
-     *
+    /**
+     * Puts the given item from the location into the player's inventory if the item is in the players location and can be picked up.
      */
     @Override
     public void execute(Player player, World world) {

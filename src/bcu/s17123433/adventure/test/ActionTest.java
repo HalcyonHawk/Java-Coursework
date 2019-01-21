@@ -12,7 +12,7 @@ public class ActionTest {
     private final Player player = new Player(car);
 
     @Test
-    public void testGetName(){
+    public void testGetName() {
         assertEquals(action.getName(), "drive");
     }
 

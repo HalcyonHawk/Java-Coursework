@@ -49,7 +49,7 @@ public class PlayerTest {
 
 		player.takeItem(key);
 		player.takeItem(coins);
-		assertEquals(player.getInventory(), items);
+		assertEquals(items, player.getInventory());
 	}
 
 	@Test

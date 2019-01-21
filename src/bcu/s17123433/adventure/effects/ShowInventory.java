@@ -25,12 +25,12 @@ public class ShowInventory implements Effect {
      */
     @Override
     public void execute(Player player, World world) {
-        if (player.getInventory().size() == 0) {
+        if (player.getInventory().size() < 1) {
             System.out.println("Your inventory is empty.");
         } else {
             System.out.print("Your inventory: ");
             for (Item item : player.getInventory()) {
-                System.out.println(item.getName() + "\n ");
+                System.out.println(item.getName() + ", ");
             }
         }
     }

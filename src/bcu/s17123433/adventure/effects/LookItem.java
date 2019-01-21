@@ -28,7 +28,7 @@ public class LookItem implements Effect {
     @Override
     public void execute(Player player, World world) {
         if ((world.getItem(name) == null) || !player.canSeeItem(world.getItem(name))) {
-            System.out.println("You can't inspect item");
+            System.out.println("You can not inspect item");
         } else {
             System.out.println(world.getItem(name).getDescription());
         }

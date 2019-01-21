@@ -22,12 +22,4 @@ public class DropItemTest {
         player.dropItem(bike);
         assertFalse(player.hasItem(bike));
     }
-
-    @Test
-    public void testDropNoItem() {
-        Item bike = world.addItem("bike", "A child's bike with training wheels.");
-        shed.addItem(bike);
-        bike.setPortable(true);
-        player.dropItem(bike);
-    }
 }

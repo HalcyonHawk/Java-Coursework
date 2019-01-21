@@ -29,7 +29,7 @@ public class DoAction implements Effect {
     @Override
     public void execute(Player player, World world) {
         if (!world.getAction(name).isAllowed(player) || world.getAction(name) == null){
-            System.out.println("You can't do the action");
+            System.out.println("You can not do the action");
         } else {
             for (Effect effect : world.getAction(name).getEffects()) {
                 effect.execute(player, world);

@@ -26,7 +26,7 @@ public class ItemTest {
 	}
 
 	@Test
-	public void testLocation() {
+	public void testLocationOfItem() {
 		Location house = new Location("house", "You are in a small village house.");
 		clock.setLocation(house);
 		assertSame(house, clock.getLocation());

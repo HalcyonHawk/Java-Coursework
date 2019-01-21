@@ -16,11 +16,6 @@ public class Quit implements Effect {
     public Quit() {
     }
 
-    /**Throws a QuitException which eventually closes the game when caught
-     *
-     * @param world The world of the game which is being quit
-     * @param player The player of the game which is being quit
-     */
     /**
      * End game by throwing QuitException. Game ends when this custom error is caught.
      * @param player Player of the game being quit
